@@ -1,14 +1,16 @@
 const Pool = require('pg').Pool;
 const bayern = require('./webScraping')
+require('dotenv').config()
+
+const isProduction = process.env.NODE_ENV === "production";
+
+const connectionString = `postgresql://${process.env.PG_USER}:${process.env.PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'api',
-    password: 'Hoffman1!',
-    dialect: 'postgres',
-    port:5432
+    connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
 });
+
+console.log(process.env,'<-----process.ENV')
 
 pool.connect((err, client, release) => {
     if (err) {

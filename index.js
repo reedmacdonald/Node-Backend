@@ -12,7 +12,6 @@ app.use(function(req, res, next) {
   });
 
 const db = require('./queries')
-const bayern = require('./webScraping')
 
 const portNumber = 3001
 const server = app.listen(portNumber, function () {
