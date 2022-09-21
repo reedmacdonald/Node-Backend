@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
 const db = require('./queries')
 
 const portNumber = 3001
-const server = app.listen(portNumber, function () {
+const server = app.listen(process.env.PORT || portNumber, function () {
     let host = server.address().address
     let port = server.address().port
 })
