@@ -1,0 +1,19 @@
+{
+  "name": "myfirstbackend",
+  "version": "1.0.0",
+  "description": "My first backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.1",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4"
+  }
+}
